@@ -14,7 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Copyright from "../components/Copyright/Copyright";
 import { BASE_URL } from "../config";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -43,7 +43,7 @@ export default function SignUp() {
       })
       .catch((err) => {
         console.log(err.response.data);
-        toast.error(err.response.data.message)
+        toast.error(err.response.data.message);
       });
   };
 

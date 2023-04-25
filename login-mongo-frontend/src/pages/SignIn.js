@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Copyright from "../components/Copyright/Copyright";
-import axios from "axios";
+// import axios from "axios";
 import { BASE_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -34,16 +34,17 @@ export default function SignIn() {
     axios
       .post(url, user)
       .then((res) => {
-        localStorage.setItem("firstName", res.data.user.firstName)
-        localStorage.setItem("lastName", res.data.user.lastName)
-        localStorage.setItem("email", res.data.user.email)
-        localStorage.setItem("password", res.data.user.password)
-        localStorage.setItem("id", res.data.user._id)
-        
+        localStorage.setItem("firstName", res.data.user.firstName);
+        localStorage.setItem("lastName", res.data.user.lastName);
+        localStorage.setItem("email", res.data.user.email);
+        localStorage.setItem("password", res.data.user.password);
+        localStorage.setItem("id", res.data.user._id);
+
         toast.success("Successfully Logged In");
         navigate("/dashboard");
       })
-      .catch((err) => {console.log(err)
+      .catch((err) => {
+        console.log(err);
         toast.error(err.response.data.message);
       });
   };
@@ -123,4 +124,3 @@ export default function SignIn() {
     </ThemeProvider>
   );
 }
-
