@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh '''
                     ls
-                    cd login-mongo/frontend
+                    cd login-mongo-frontend
                     npm install
                 '''
         
