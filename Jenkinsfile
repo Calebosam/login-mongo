@@ -6,7 +6,7 @@ pipeline {
   }
   
   stages {
-        stage("Test pipelint"){
+        stage("Test pipeline"){
             steps{
                 echo "Hello world"
             }
