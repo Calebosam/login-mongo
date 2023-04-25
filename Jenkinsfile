@@ -7,7 +7,11 @@ pipeline {
   stages {
         stage('Install Dependencies') {
             steps {
-            sh 'npm install'
+                sh '''
+                    cd login-mongo/frontend
+                    npm install
+                '''
+        
             }
         }
         // stage('Build') {
@@ -28,7 +32,10 @@ pipeline {
                 }
             }
             steps {
-                sh npm test
+                sh '''
+                    cd login-mongo/frontend
+                    npm test
+                '''
             }
         }
 
