@@ -10,6 +10,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
+                    ls
                     cd login-mongo/frontend
                     npm install
                 '''
