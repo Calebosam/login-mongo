@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+    node {
+        label 'jenkins-node-python-agent'
+    }
+  }
   
   stages {
         stage("Test pipelint"){
